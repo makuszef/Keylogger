@@ -6,7 +6,7 @@ Keylogger should be converted to executable using py-to-exe.
 
 **Wykaz i opis części składowych –** opracowanych lub adaptowanych
 
-Keylogger **napisy w języku** Python
+Keylogger **napisany w języku** Python
 
 Wykorzystane procedury/funkcje keylogger python:
 
