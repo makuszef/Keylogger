@@ -1,193 +1,138 @@
-# Keylogger designed in python
-# English docs
+# Keylogger Designed in Python
+
+## English Documentation
+
 Tested in Windows 10/11.
-After starting, the keylogger copies the keylogger executable file (if it does not find in the startup programs folder) to the folder C:\Users\<username>\AppData\Roaming\Microsoft\Windows\StartMenu\Programs\Startup user. 
-The keylogger saves pressed keys to a text file located in the C:\Users\<username>\AppData\Local\Temp folder. Every 10 seconds the log file is sent to the mega disk.
-Keylogger should be converted to executable using py-to-exe.
 
-# Dokumentacja
-**Wykaz i opis części składowych –** opracowanych lub adaptowanych
+After starting, the keylogger copies the keylogger executable file (if it does not find it in the startup programs folder) to the folder `C:\Users\<username>\AppData\Roaming\Microsoft\Windows\StartMenu\Programs\Startup`. 
 
-Keylogger **napisany w języku** Python
+The keylogger saves pressed keys to a text file located in the `C:\Users\<username>\AppData\Local\Temp` folder. Every 10 seconds, the log file is sent to the Mega disk.
 
-Wykorzystane procedury/funkcje keylogger python:
+The keylogger should be converted to an executable using `py-to-exe`.
 
-1. copy_to_strartup(soruce_file)
+## Dokumentacja
 
-argumenty wejściowe:
+### Wykaz i opis części składowych – opracowanych lub adaptowanych
 
-- soruce_file – string, ścieżka do pliku keyloggera
+**Keylogger napisany w języku Python**
 
-wartość zwracana:
+### Wykorzystane procedury/funkcje keyloggera w Pythonie:
 
-- brak
+1. `copy_to_startup(source_file)`
 
-Działanie
+   - **Argumenty wejściowe:**
+     - `source_file` – string, ścieżka do pliku keyloggera
 
-Kopiowanie pliku exe keyloggera do katalogu Startup aktualnego użytkownika (jeśli
-nie jest dodany)
+   - **Wartość zwracana:**
+     - brak
 
-2. Find_File()
+   - **Działanie:**
+     - Kopiowanie pliku exe keyloggera do katalogu Startup aktualnego użytkownika (jeśli nie jest dodany).
 
-argumenty wejściowe:
+2. `find_file()`
 
-- brak
+   - **Argumenty wejściowe:**
+     - brak
 
-wartość zwracana:
+   - **Wartość zwracana:**
+     - bezwzględna ścieżka do pliku keyloggera
 
-- bezwzględna ścieżka do pliku keylogger
+   - **Działanie:**
+     - Szukanie pliku keyloggera w systemie plików oraz zwracanie ścieżki do pliku keyloggera.
 
-Działanie
+3. `upload_to_mega(file_path)`
 
-Szukanie pliku keyloggera w systemie plików oraz zwracanie ścieżki do pliku
-keyloggera
+   - **Argumenty wejściowe:**
+     - `file_path` – string, ścieżka do pliku, który zostanie wysłany na dysk Mega (logi)
 
-3. upload_to_mega(file_path)
+   - **Wartość zwracana:**
+     - brak
 
-argumenty wejściowe:
+   - **Działanie:**
+     - Logowanie do dysku Mega i wysyłanie wskazanego pliku na dysk.
 
-- file_path – string, ścieżka do pliku który zostanie wysłany na dysk mega (logi)
+4. `add_to_startup()`
 
-wartość zwracana:
+   - **Argumenty wejściowe:**
+     - brak
 
-- brak
+   - **Wartość zwracana:**
+     - brak
 
-Działanie
+   - **Działanie:**
+     - Znajdowanie ścieżki do pliku keyloggera i wywoływanie funkcji `copy_to_startup`.
 
-Logowanie do dysku mega i wysyłanie wskazanego pliku na dysk
+5. `get_active_window_title()`
 
-4. add_to_startup()
+   - **Argumenty wejściowe:**
+     - brak
 
-argumenty wejściowe:
+   - **Wartość zwracana:**
+     - ciąg znaków wskazujący aktywne okno
 
-- brak
+   - **Działanie:**
+     - Odczytywanie i zwracanie nazwy aktywnego okna.
 
+6. `start_keylogger()`
 
-wartość zwracana:
+   - **Argumenty wejściowe:**
+     - brak
 
-- brak
+   - **Wartość zwracana:**
+     - brak
 
-Działanie
+   - **Działanie:**
+     - Rozpoczęcie przechwytywania wpisywanych znaków.
 
-Znajdowanie ścieżki do pliku keyloggera i wywoływanie funkcji copy_to_startup
+7. `periodic_upload(file_path, interval)`
 
-5. get_active_window_title()
+   - **Argumenty wejściowe:**
+     - `file_path` – string, ścieżka do pliku, który zostanie wysłany na dysk Mega (logi)
+     - `interval` – czas w sekundach, po którym plik zostanie wysłany na dysk Mega
 
-argumenty wejściowe:
+   - **Wartość zwracana:**
+     - brak
 
-- brak
+   - **Działanie:**
+     - Wysyłanie co określony czas pliku na dysk Mega.
 
-wartość zwracana:
+8. `on_press(key)`
 
-- ciąg znaków wskazujący aktywne okno
+   - **Argumenty wejściowe:**
+     - `key` – typ wyzwalacza wywołujący procedurę `on_press`
 
-Działanie
+   - **Wartość zwracana:**
+     - brak
 
-Odczytywanie i zwracanie nazwy aktywnego okna
+   - **Działanie:**
+     - Zapisywanie do pliku tekstowego ciągu wskazującego: wciśnięty klawisz i aktywne okno. Znaki wpisywane w jednym oknie są zapisywane w pojedynczym wierszu pliku.
 
-6. start_keylogger()
+### Skąd pozyskano kod python – ChatGPT 3
 
-argumenty wejściowe:
+### Krótki opis działania
 
-- brak
+Po uruchomieniu keylogger kopiuje plik wykonywalny keyloggera (jeśli nie znajduje się w folderze programów uruchomieniowych) do folderu `C:\Users\<username>\AppData\Roaming\Microsoft\Windows\StartMenu\Programs\Startup` użytkownika. Keylogger zapisuje wciśnięte klawisze do pliku tekstowego (plik z logami) znajdującego się w folderze `C:\Users\<username>\AppData\Local\Temp`. Co 10 sekund plik z logami jest wysyłany na dysk Mega.
 
-wartość zwracana:
+### Instrukcja instalacji/użytkowania
 
-- brak
+#### Scenariusze
 
-Działanie
+1. **Instalacji na komputerze ofiary.**
+    1. Agent, stosując biały wywiad, zbiera informacje na temat ofiary.
+    2. Bazując na informacjach zebranych w poprzednim punkcie, Agent tworzy mail spear phishingowy (np. wykorzystując social engineering toolkit). W załączniku dodaje plik wykonywalny (tworzony podczas punktu ii., podpunkt 6) i wysyła go do ofiary.
+        1. Jeśli przesyłanie pliku wykonywalnego jest blokowane, agent przygotowuje inną formę dostarczenia pliku wykonywalnego (np. poprzez użycie narzędzi do kompresji i archiwizacji/udostępnienie pliku wykonywalnego w sieci i wysłanie adresu do pliku w mailu).
+    3. Ofiara otwiera mail, pobiera załącznik. Załącznik to plik wykonywalny (szczegóły punkt ii.), który po uruchomieniu wykonuje czynności zgodne z treścią maila spear phishingowego (np. wyświetla obraz/otwiera aplikację/pobiera aktualizację), a także pobiera i uruchamia keylogger (w tle).
 
-Rozpoczęcie przechwytywania wpisywanych znaków
+2. **Przygotowania mechanizmów dostarczania informacji do napastnika.**
+    1. Napastnik otwiera Tor Browser, tworzy konto pocztowe (np. domena interia.pl).
+    2. Napastnik tworzy konto na dysku Mega z użyciem konta pocztowego utworzonego w poprzednim punkcie.
+    3. Napastnik przekazuje agentowi poświadczenie do konta dysku Mega (komunikacja wyłącznie przez Tor Browser), tak aby agent zmodyfikował poświadczenia do zalogowania do dysku Mega w skrypcie Python (keylogger).
+    4. Agent generuje plik wykonywalny ze skryptu Python (keylogger).
+    5. Agent udostępnia plik wykonywalny wygenerowany w poprzednim punkcie w sieci, aby można go było pobrać za pomocą komendy `curl`/`Invoke-WebRequest` z PowerShell (np. udostępnia plik w file.io) oraz zapisuje adres pliku.
+    6. Agent tworzy skrypt PowerShell, który wykonuje czynności zgodne z treścią maila spear phishingowego (wytworzonego w punkcie i., podpunkt 2). Skrypt PowerShell również pobiera (korzysta z adresu pliku z podpunktu 5) i uruchamia keylogger.
+    7. Agent generuje plik wykonywalny (wysłany w załączniku maila w punkcie i., podpunkt 2) ze skryptu PowerShell.
 
-7. periodic_upload(file_path, interval)
-
-argumenty wejściowe:
-
-- file_path – string, ścieżka do pliku który zostanie wysłany na dysk mega (logi)
-- interval – czas w sekundach po których plik zostanie wysłany na dysk mega
-
-wartość zwracana:
-
-- brak
-
-Działanie
-
-Wysyłanie co określony czas pliku na dysk mega
-
-8. on_press(key)
-
-argumenty wejściowe:
-
-- key – typ wyzwalacza wywołujący procedurę on_press
-
-
-wartość zwracana:
-
-- brak
-
-Działanie
-
-Zapisywanie do pliku tekstowego ciągu wskazującego: wciśnięty klawisz i aktywne
-okno. Znaki wpisywane w jednym oknie są zapisywane w pojedynczym wierszu pliku
-
-**Skąd pozyskano kod python** – ChatGPT 3.
-
-**Krótki opis działania**
-
-Po uruchomieniu keylogger kopiuje plik wykonywalny keylogger’a (jeśli nie znajduje
-się w folderze programów uruchomieniowych) do folderu
-C:\Users\<username>\AppData\Roaming\Microsoft\Windows\StartMenu\Programs\Startup
-użytkownika. Keylogger zapisuje wciśnięte klawisze do pliku tekstowego (plik z
-logami) znajdującego się w folderze C:\Users\<username>\AppData\Local\Temp. Co
-10 sekund plik z logami jest wysyłany na dysk mega.
-
-**Instrukcja instalacji/użytkownika**
-
-Scenariusze
-
-```
-i. Instalacji na komputerze ofiary.
-```
-1.Agent stosując biały wywiad zbiera informacje na temat ofiary
-
-2.Bazując na informacjach zebranych w poprzednim punkcie, Agent tworzy mail spear
-phisingowy (np. wykorzystując social engeneering toolkit). W załączniku dodaje plik
-wykonywalny (tworzony podczas :punkt ii. podpunkt 6 ) i wysyła go do ofiary.
-
-```
-2.1 Jeśli przesyłanie pliku wykonywalnego jest blokowane, agent przygotowuje
-inną formę dostarczenia pliku wykonywalnego (np. poprzez użycie narzędzi do
-kompresji i archiwizacji/udostępnienie pliku wykonywalnego w sieci i wysłanie
-adresu do pliku w mail’u).
-```
-3.Ofiara otwiera mail, pobiera załącznik. Załącznik to plik wykonywalny (szczegóły
-punkt ii.), który po uruchomieniu wykonuje czynności zgodne z treścią mail’a spear
-phisingowego (np. wyświetla obraz/otwiera aplikację/pobiera aktualizację), a także
-pobiera i uruchamia keylogger (w tle).
-
-```
-ii. Przygotowania mechanizmów dostarczania informacji do napastnika.
-```
-1. Napastnik otwiera Tor Browser, tworzy konto pocztowe (np. domena interia.pl)
-2. Napastnik tworzy konto na dysku mega z użyciem konta pocztowego
-    utworzonego w poprzednim punkcie
-3. Napastnik przekazuje agentowi poświadczenie do konta dysku mega
-    (komunikacja wyłącznie przez Tor Browser), tak aby agent zmodyfikował
-    poświadczenia do zalogowania do dysku mega w skrypcie python (keylogger)
-4. Agent generuje plik wykonywalny ze skryptu python (keylogger)
-
-
-5. Agent udostępnia plik wykonywalny wygenerowany w poprzednim punkcie w
-    sieci, aby można go było pobrać za pomocą komendy curl/Invoke-WebRequest
-    z powershell (np. udostępnia plik w file.io) oraz zapisuje adres pliku
-6. Agent tworzy skrypt powershell, który wykonuje czynności zgodne z treścią
-    mail’a spear phisingowego (wytworzonego w punkcie i. podpunkt 2). Skrypt
-    powershell również pobiera (korzysta z adresu pliku z podpunktu 5) i
-    uruchamia keylogger.
-7. Agent generuje plik wykonywalny (wysłany w załączniku maila w punkcie i.
-    podpunkt 2) ze skryptu powershell
-iii. **Obsługi odbierania informacji przez** napastnika.
-1. Napastnik otwiera Tor Browser
-2. Napastnik loguję się na dysk mega
-3. Napastnik przegląda pliki, które znajdują się na dysku (logi z wciśniętych
-    klawiszy)
+3. **Obsługi odbierania informacji przez napastnika.**
+    1. Napastnik otwiera Tor Browser.
+    2. Napastnik loguje się na dysk Mega.
+    3. Napastnik przegląda pliki, które znajdują się na dysku (logi z wciśniętych klawiszy).
