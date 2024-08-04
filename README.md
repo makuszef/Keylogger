@@ -31,6 +31,7 @@ password = 'PASSWORD'
    Example command:
    ```bash
    pyinstaller --noconfirm --onefile --windowed "keylogger.py"
+   ```
 ## Dokumentacja
 
 ### Wykaz i opis części składowych – opracowanych lub adaptowanych
