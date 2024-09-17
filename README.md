@@ -158,3 +158,13 @@ Po uruchomieniu keylogger kopiuje plik wykonywalny keyloggera (jeśli nie znajdu
     1. Napastnik otwiera Tor Browser.
     2. Napastnik loguje się na dysk Mega.
     3. Napastnik przegląda pliki, które znajdują się na dysku (logi z wciśniętych klawiszy).
+  
+
+<p align="center">
+  Watch it on Youtube
+</p>
+<p align="center">
+  <a href="https://youtu.be/1SP2MZhuVkE">
+    <img src="https://img.youtube.com/vi/1SP2MZhuVkE/0.jpg" alt="Watch this video on YouTube" width="600">
+  </a>
+</p>
