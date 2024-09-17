@@ -164,7 +164,7 @@ Po uruchomieniu keylogger kopiuje plik wykonywalny keyloggera (jeśli nie znajdu
   Watch it on Youtube
 </p>
 <p align="center">
-  <a href="https://youtu.be/1SP2MZhuVkE">
-    <img src="https://img.youtube.com/vi/1SP2MZhuVkE/0.jpg" alt="Watch this video on YouTube" width="600">
+  <a href="https://www.youtube.com/watch?v=CrbTFdZhOE4">
+    <img src="https://img.youtube.com/vi/CrbTFdZhOE4/0.jpg" alt="Watch this video on YouTube" width="600">
   </a>
 </p>
