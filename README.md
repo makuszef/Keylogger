@@ -161,10 +161,10 @@ Po uruchomieniu keylogger kopiuje plik wykonywalny keyloggera (jeśli nie znajdu
   
 
 <p align="center">
-  Watch it on Youtube
+  Watch it on my Google disk, unforntunately video was deleted from YouTube, due to "policy violation"
 </p>
 <p align="center">
   <a href="https://www.youtube.com/watch?v=CrbTFdZhOE4">
-    <img src="https://img.youtube.com/vi/CrbTFdZhOE4/0.jpg" alt="Watch this video on YouTube" width="600">
+    <img src="https://drive.google.com/file/d/1dzYZs4XNzx0RVdlrJhJDvGzMv89xMT4M/view?usp=sharing" alt="Watch this video" width="600">
   </a>
 </p>
